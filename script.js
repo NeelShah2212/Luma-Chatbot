@@ -163,7 +163,10 @@ User: ${userMessage}
         sendButton.disabled = false;
         sendButton.classList.remove('opacity-50', 'cursor-not-allowed');
         userInput.placeholder = 'Send a message...';
-        userInput.focus();
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        if (!isMobile) {
+            userInput.focus();
+        }
     }
 
     // Event listeners
