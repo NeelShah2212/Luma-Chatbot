@@ -76,13 +76,22 @@
 
         currentAbortController = new AbortController();
 
+        // 💡 Prompt engineering for concise answers
+        const prompt = `
+You are Luma, a helpful assistant.
+Always give **concise and to-the-point** responses by default.
+Only give **long or detailed** responses when the user explicitly asks to "explain", "brief", or "elaborate".
+
+User: ${userMessage}
+`;
+
         for (let i = 0; i < MAX_RETRIES; i++) {
             try {
                 const response = await fetch(API_URL, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
-                        contents: [{ parts: [{ text: userMessage }] }]
+                        contents: [{ parts: [{ text: prompt }] }]
                     }),
                     signal: currentAbortController.signal
                 });
