@@ -1,5 +1,5 @@
 (function () {
-    const apiKey = ""; // API key is provided automatically
+    const apiKey = "AIzaSyC_2S2lCkQAeMTPHADt9fjrYmTSTbxjKUQ"; // API key is provided automatically
     const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
 
     const messageScreen = document.getElementById('messageScreen');
