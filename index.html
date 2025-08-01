@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chatbot Luma</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.5/dist/purify.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="min-h-screen text-white font-['Inter'] overflow-x-hidden">
+
+    <div class="flex flex-col w-full h-screen bg-gradient-to-br from-[#1a202c] to-[#2d3748]">
+
+        <!-- Header -->
+        <div class="p-4 bg-[#1f2937] border-b border-gray-600 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <img src="images/logo1.png" class="w-12 h-12 logo-glow" alt="Luma Logo" />
+                <div>
+                    <h3 class="text-xl font-bold text-white">Luma</h3>
+                    <p class="text-sm text-gray-400">Online</p>
+                </div>
+            </div>
+            <button id="newChatButton"
+                    class="bg-gray-700 text-white px-3 py-2 rounded-lg hover:bg-gray-600 transition duration-200 text-sm">
+                    + New Chat
+                </button>
+        </div>
+
+        <!-- Message Screen with Gradient Background -->
+        <div id="messageScreen" class="flex-1 p-4 overflow-y-auto space-y-4 max-w-4xl mx-auto w-full">
+            <!-- Messages appear here -->
+        </div>
+
+        <!-- Typing Indicator -->
+        <div id="typingIndicator" class="px-4 pb-2 pt-1 hidden">
+            <div class="bg-gray-200 rounded-xl px-4 py-2 w-fit">
+                <span class="text-gray-500">Luma is typing</span>
+                <span class="typing-dot text-gray-500">.</span>
+                <span class="typing-dot text-gray-500">.</span>
+                <span class="typing-dot text-gray-500">.</span>
+            </div>
+        </div>
+
+        <!-- Input Area -->
+        <div class="p-4 bg-[#1f2937] border-t border-gray-600">
+            <div class="flex items-center space-x-3 max-w-4xl mx-auto w-full">
+                <input type="text" id="userInput" placeholder="Send a message..."
+                    class="flex-1 p-3 bg-[#2d3748] text-white placeholder-gray-400 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 transition-shadow duration-200" />
+                <button id="sendButton"
+                    class="bg-blue-600 text-white p-2 rounded-full hover:bg-blue-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <i class="fa-solid fa-paper-plane text-lg"></i>
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
